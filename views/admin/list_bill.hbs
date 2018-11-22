@@ -1,0 +1,29 @@
+<div class="w3l-table-info agile_info_shadow">
+    <h3 class="w3_inner_tittle two" style="text-align: center;">Danh sách hóa đơn</h3>
+    <a href="/admin/insert_bill" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-plus"></span> Thêm 
+        </a>
+    <table id="table" class="table table-border">
+        <thead>
+            <tr>
+                <th>Mã hóa đơn</th>
+                <th>Thanh toán</th>
+                <th>Tác vụ</th>
+            </tr>
+        </thead>
+        <tbody> 
+            {{#each result}}
+            <tr>
+                <td data-th="Name"><span class="bt-content">{{this._idmahd}}</span></td>
+                <td data-th="Age"><span class="bt-content">{{this.tong_tien}}</span></td>
+                        <td data-th="Height"><span class="bt-content">
+                                <a href="/admin/update_type_food/{{this._idmahd}}"   class="btn btn-success btn-sm">Cập nhật</a>
+                                <a onclick="return confirm('Bạn có muốn xóa hay không?')" href="/admin/delete_type_food/{{this._idmahd}}"  class="btn btn-danger btn-sm">Xóa</a>
+                    </span></td>
+                
+            </tr>
+          {{/each}}
+            <input name="_csrf" type="hidden" value="{{csrfToken}}">
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,101 @@
+<div class="wthree_general graph-form agile_info_shadow ">
+    <h3 class="w3_inner_tittle two" style="text-align: center;">Thêm món ăn </h3>
+<div class="form-body {{flash.type}}">
+    {{#each flash.messages}}
+    <ul>
+    {{#each this}}
+   <li>{{this}}</li>
+    {{/each}}
+    </ul>
+    {{/each}}
+    </div>
+    <div class="grid-1 ">
+        <div class="form-body">
+            <form class="form-horizontal" method="POST" enctype="multipart/form-data">
+                
+                 <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Mã</label>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control1" id="focusedinput" placeholder="Nhập mã vào đây!"name="ma"  value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Tên món</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control1" id="focusedinput" placeholder="Nhập tên món ăn!" name="ten" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Nội dung chi tiết</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control1" id="focusedinput" placeholder="Nhập nội dung chi tiết!!" name="ndct" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Nội dung tóm tắt</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control1" id="focusedinput" placeholder="Nhập nội dung tóm tắt!"name="ndtt" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Đơn giá</label>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control1" id="focusedinput" name="gia" placeholder="Nhập đơn giá!"value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Đơn giá khuyến mãi</label>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control1" id="focusedinput" name="giakmai" placeholder="Nhập đơn giá khuyến mãi!"value="">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Loại món ăn</label>
+                      <div class="col-sm-8">
+                    <select class="form-control" id="loaisp" name="loai">
+                                                <!-- <option value=""></option> -->
+                                                {{#each result}} {{#each this}}
+                                                <option id="maLoai" value="{{this.ma_loai}}">{{this.ten_loai}}</option>
+                                                {{/each}} {{/each}}
+                                            </select>
+                 </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Khuyến mãi</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control1" id="focusedinput" name="khuyenmai" placeholder="Nhập khuyến mãi!"value="">
+                    </div>
+                </div>
+                {{!-- <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Ngày cập nhật</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control1" id="focusedinput" name="ngaycn" placeholder="Nhập ngày dd/mm/yyyy!" value="">
+                    </div>
+                </div> --}}
+               <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Đơn vị tính</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control1" id="focusedinput" name="dvt" placeholder="Nhập đơn vị tính!"value="">
+                    </div>
+                </div>
+                
+               <div class="form-group">
+                   <label for="focusedinput" class="col-sm-2 control-label">Thêm hình ảnh</label>
+                   <div class="col-sm-8">
+                <input type="file" id="hinh" class="form-control1" required="required" class="form-control" name="hinh">
+                </div>
+                </div>
+            
+                <input name="_csrf" type="hidden" value="{{csrfToken}}">
+               <div class="row">
+                 <div class="text-center">
+                <button class="btn btn-success">Thêm</button>
+                <a href="/admin/list_food"class="btn btn-warming">Hủy</a>
+                </div>
+            </div>
+            </form>
+        </div>
+
+    </div>
+</div>

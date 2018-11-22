@@ -1,0 +1,82 @@
+
+<div class="wthree_general graph-form agile_info_shadow ">
+    <h3 class="w3_inner_tittle two" style="text-align: center;">Chi tiết món ăn </h3>
+
+    <div class="grid-1 ">
+        <div class="form-body">
+            <form class="form-horizontal">
+                {{#with result}}
+                 <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Mã</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control1" id="focusedinput" name="ma"readonly="true" value="{{this.ma_mon}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Tên món</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control1" id="focusedinput" name="ten"readonly="true" value="{{this.ten_mon}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Nội dung chi tiết</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control1" id="focusedinput" name="ndct"readonly="true" value="{{this.noi_dung_chi_tiet}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Nội dung tóm tắt</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control1" id="focusedinput" name="ndtt"readonly="true" value="{{this.noi_dung_tom_tat}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Đơn giá</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control1" id="focusedinput" name="gia"readonly="true" value="{{this.don_gia}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Đơn giá khuyến mãi</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control1" id="focusedinput" name="giakmai"readonly="true" value="{{this.don_gia_khuyen_mai}}">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Loại món ăn</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control1" id="focusedinput" readonly="true"name="lsp" value="{{this.ma_loai}}">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Khuyến mãi</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control1" id="focusedinput"readonly="true" name="khuyenmai" value="{{this.khuyen_mai}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Ngày cập nhật</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control1" id="focusedinput"readonly="true" name="ngaycn" value="{{this.ngay_cap_nhat}}">
+                    </div>
+                </div>
+               <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Đơn vị tính</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control1" id="focusedinput" name="dvt"readonly="true" value="{{this.don_vi_tinh}}">
+                    </div>
+                </div>
+                <div >
+                    <label for="focusedinput" class="col-sm-2 control-label">Hình</label>
+                   
+                        <img class="img-responsive chain" src="../{{this.hinh}}" alt=" " />
+                    
+                </div>
+               
+                {{/with}}
+            </form>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="w3l-table-info agile_info_shadow">
+    <h3 class="w3_inner_tittle two" style="text-align: center;">Danh sách khách hàng</h3>
+    <table id="table" class="table table-border">
+        <thead>
+            <tr>
+                <th>Mã</th>
+                <th>Tên </th>
+                <th>Email</th>
+                <th>Trạng thái</th>
+                <th>Tác vụ</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each result}}
+            <tr class="{{{MauDong this.trangThai}}}">
+                <td data-th="Name"><span class="bt-content">{{this.ma_khach_hang}}</span></td>
+                <td data-th="Age"><span class="bt-content">{{this.ten_khach_hang}}</span></td>
+                <td data-th="Gender"><span class="bt-content">{{this.email}}</span></td>
+                 <td data-th="Gender"><span class="bt-content ">{{this.trangThai}}</span></td>
+                        <td data-th="Height"><span class="bt-content">
+                                 <a href="/admin/detail_customer/{{this.ma_khach_hang}}"   class="btn btn-primary btn-sm">Chi tiết</a>
+                                <a href="/admin/update_customer/{{this.ma_khach_hang}}"   class="btn btn-success btn-sm">Cập nhật</a>
+                                <a onclick="return confirm('Bạn có muốn xóa hay không?')" href="/admin/delete_customer/{{this.ma_khach_hang}}"  class="btn btn-danger btn-sm">Xóa</a>
+                    </span></td>
+                
+            </tr>
+          {{/each}}
+            
+        </tbody>
+    </table>
+</div>

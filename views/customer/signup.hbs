@@ -1,0 +1,62 @@
+	<div class="container"> 
+			         
+		<div class="register">
+		  	  <form> 
+				 <div class="  register-top-grid">
+				
+				</div>
+				   
+				</form>
+				<div class="clearfix"> </div>
+				<div class="register-but">
+				   <form method="POST" >
+					     <div class="  register-bottom-grid">
+						    <h3>SIGNUP FOR FREE ACCOUNT</h3>
+							{{#if hasError}}
+								<div class="alert alert-danger">
+									{{#each messages}}
+										<p>{{this}}
+									{{/each}}
+								</div>
+							{{/if}}
+							<div class="mation">
+								<span>UserName<label>*</label></span>
+								<input name="userName" type="text">
+								<span>Password<label>*</label></span>
+								<input name="passWord" type="password">
+								<span>Confirm Password<label>*</label></span>
+								<input  name="passWord2" type="password">
+							</div>
+					 </div>
+					   	<input name="_csrf" type="hidden" value="{{csrfToken}}">
+					   <input type="submit" value="submit">
+					   <div class="clearfix"> </div>
+				   </form>
+				</div>
+		   </div>
+	
+					</div>
+				<!--initiate accordion-->
+		<script type="text/javascript">
+			$(function() {
+			    var menu_ul = $('.menu > li > ul'),
+			           menu_a  = $('.menu > li > a');
+			    menu_ul.hide();
+			    menu_a.click(function(e) {
+			        e.preventDefault();
+			        if(!$(this).hasClass('active')) {
+			            menu_a.removeClass('active');
+			            menu_ul.filter(':visible').slideUp('normal');
+			            $(this).addClass('active').next().stop(true,true).slideDown('normal');
+			        } else {
+			            $(this).removeClass('active');
+			            $(this).next().stop(true,true).slideUp('normal');
+			        }
+			    });
+			
+			});
+		</script>
+					
+	   		     	 <a class="view-all all-product" href="product.html">VIEW ALL PRODUCTS<span> </span></a> 	
+			</div>      
+	</div>

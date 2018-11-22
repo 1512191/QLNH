@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Food Corner a Hotels and Restaurants Category Flat Bootstrap responsive Website Template | Menu :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Food Corner Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap-css -->
+<link href="/stylesheets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!--// bootstrap-css -->
+<!-- css -->
+<link rel="stylesheet" href="/stylesheets/css/style1.css" type="text/css" media="all" />
+<!--// css -->
+<link rel="stylesheet" href="/stylesheets/css/owl.carousel.css" type="text/css" media="all">
+<link href="/stylesheets/css/owl.theme.css" rel="stylesheet">
+<!-- font-awesome icons -->
+<link href="/stylesheets/css/font-awesome.css" rel="stylesheet"> 
+<link href="/stylesheets/css/etalage.css"rel="stylesheet">
+<link href="/stylesheets/css/form.css"rel="stylesheet">
+<link href="/stylesheets/css/font-awesome.css"rel="stylesheet">
+<!-- //font-awesome icons -->
+<!-- font -->
+<link rel = "stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!-- //font -->
+<script src="/javascripts/jquery-1.11.1.min.js"></script>
+<script src="/javascripts/boostrap.js"></script>
+<script src="/javascripts/SmoothScroll.min.js"></script>
+
+<script src="/javascripts/jquery.flexisel.js"></script>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/javascripts/jquery.wmuSlider.js"></script>
+</head>
+<body>
+    
+		<!--header-->
+		{{> header}}
+		<!--//header-->
+		
+	
+	<div class="container">
+		{{>menu}}
+		
+{{{body}}}
+
+	</div>
+
+
+	   		   
+{{> footer}}
+<div class="agileits-copyright">
+		<div class="container">
+			<p>© 2016 Food Corner. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+		</div>
+</div>
+</body>
+</html>
+
+	<!-- banner -->
+	
+	
+	
+	
+	<!-- //menu -->
+	
+	<!-- footer -->
+	
+	<!-- //footer -->
+	
+	<!-- agileits-copyright -->
+	
+	<!-- //agileits-copyright -->
+<script>
+		addToCart = (id)=>{
+			console.log('/add-to-cart/' + id)
+			$.ajax({
+				type : 'GET',
+				url : '/add-to-cart/' + id,
+				success: function(data){
+					//console.log(data)
+					$('#mybadge').text(data);
+					tempAlert('Đã thêm vào <br/> giỏ hàng! <br/> Số lượng món: '+ data + '<br/> <a href= "/cartview" class ="btn btn-danger"> Xem giỏ hàng </a>', 3000)
+				}
+			})
+		}
+		function tempAlert(msg,duration)
+		{
+			var el = document.createElement("div");
+			el.setAttribute("style","text-align:  center;position: fixed;width: 300px;height: 150px;top: 25%;left: 52%;color: blueviolet;font-size: 25px;vertical-align: middle;background-color: #ffffffff;border: 1px solid #ddd;");
+			el.innerHTML = msg;
+			document.body.appendChild(el);
+
+			setTimeout(function(){
+				el.parentNode.removeChild(el);
+			},duration);
+			console.log('popup')
+		}
+</script>

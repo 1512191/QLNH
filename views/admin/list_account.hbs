@@ -1,0 +1,34 @@
+<div class="w3l-table-info agile_info_shadow">
+    <h3 class="w3_inner_tittle two" style="text-align: center;">Danh sách tài khoản</h3>
+    <a href="/admin/insert_account" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-plus"></span> Thêm 
+        </a>
+    <table id="table" class="table table-border">
+        <thead>
+            <tr>
+                <th>Mã</th>
+                <th>Tên đăng nhập</th>
+                <th>Loại tài khoản</th>
+                <th>Trạng thái</th>
+                <th>Tác vụ</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each result}}
+            <tr class="{{{Dong this.trangThai}}}">
+                <td data-th="Name"><span class="bt-content">{{this.ma}}</span></td>
+                <td data-th="Age"><span class="bt-content">{{this._user}}</span></td>
+                <td data-th="Gender"><span class="bt-content">{{{LoaiTaiKhoan this.loaiTK}}}</span></td>
+                 <td data-th="Gender"><span class="bt-content {{{Mau this.trangThai}}}">{{{TrangThai this.trangThai}}}</span></td>
+                        <td data-th="Height"><span class="bt-content">
+                                
+                                <a href="/admin/update_account/{{this.ma}}"   class="btn btn-success btn-sm">Cập nhật</a>
+                                <a onclick="return confirm('Bạn có muốn xóa hay không?')" href="/admin/delete_account/{{this.ma}}"  class="btn btn-danger btn-sm">Xóa</a>
+                    </span></td>
+                
+            </tr>
+          {{/each}}
+            
+        </tbody>
+    </table>
+</div>

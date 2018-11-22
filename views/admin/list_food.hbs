@@ -1,0 +1,33 @@
+
+<div class="w3l-table-info agile_info_shadow">
+    <h3 class="w3_inner_tittle two" style="text-align: center;">Danh sách món ăn</h3>
+    <a href="/admin/insert_food" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-plus"></span> Thêm 
+        </a>
+    <table id="table" class="table table-border">
+        <thead>
+            <tr>
+                <th>Mã</th>
+                <th>Tên</th>
+                <th>Đơn giá</th>
+                <th>Tác vụ</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each result}}
+            <tr>
+                <td data-th="Name"><span class="bt-content">{{this.ma_mon}}</span></td>
+                <td data-th="Age"><span class="bt-content">{{this.ten_mon}}</span></td>
+                <td data-th="Gender"><span class="bt-content">{{this.don_gia}}</span></td>
+                        <td data-th="Height"><span class="bt-content">
+                                <a href="/admin/detail_food/{{this.ma_mon}}" class="btn btn-default btn-sm">Chi tiết</a>
+                                <a href="/admin/update_food/{{this.ma_mon}}"   class="btn btn-success btn-sm">Cập nhật</a>
+                                <a onclick="return confirm('Bạn có muốn xóa hay không?')" href="/admin/delete_food/{{this.ma_mon}}"  class="btn btn-danger btn-sm">Xóa</a>
+                    </span></td>
+                
+            </tr>
+          {{/each}}
+            
+        </tbody>
+    </table>
+</div>

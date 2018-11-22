@@ -1,0 +1,61 @@
+	<div class="container">
+		
+      	   <div class="account_grid">
+			   <div class=" login-right">
+			  	<h3>REGISTERED CUSTOMERS</h3>
+				<p>If you have an account with us, please log in.</p>
+				<form action="/customer/signin" method="POST">
+				 {{#if hasError}}
+								<div class="alert alert-danger">
+									{{#each messages}}
+										<p>{{this}}
+									{{/each}}
+								</div>
+							{{/if}}
+				  <div>
+					<span>UserName<label>*</label></span>
+					<input name="userName" type="text"> 
+				  </div>
+				  <div>
+					<span>Password<label>*</label></span>
+					<input name="passWord" type="password"> 
+				  </div>
+				   <a class="forgot" href="#">Forgot Your Password?</a>
+				 	<input name="_csrf" type="hidden" value="{{csrfToken}}">
+					<input type="submit" value="Login">
+			    </form>
+			   </div>	
+			    <div class=" login-left">
+			  	 <h3>NEW CUSTOMERS</h3>
+				 <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+				 <a class="acount-btn" href="/customer/signup">Create an Account</a>
+			   </div>
+			   <div class="clearfix"> </div>
+			 </div>
+				<!--initiate accordion-->
+		<script type="text/javascript">
+			$(function() {
+			    var menu_ul = $('.menu > li > ul'),
+			           menu_a  = $('.menu > li > a');
+			    menu_ul.hide();
+			    menu_a.click(function(e) {
+			        e.preventDefault();
+			        if(!$(this).hasClass('active')) {
+			            menu_a.removeClass('active');
+			            menu_ul.filter(':visible').slideUp('normal');
+			            $(this).addClass('active').next().stop(true,true).slideDown('normal');
+			        } else {
+			            $(this).removeClass('active');
+			            $(this).next().stop(true,true).slideUp('normal');
+			        }
+			    });
+			
+			});
+		</script>
+					
+			</div>
+			  <div class="clearfix"> </div>
+      	 </div>
+</div>
+	<!---->
+	

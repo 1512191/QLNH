@@ -1,0 +1,99 @@
+<div class="wthree_general graph-form agile_info_shadow ">
+    <h3 class="w3_inner_tittle two" style="text-align: center;">Thêm tài khoản </h3>
+    {{!-- //<div class="{{flash.type}}"></div> --}}
+ <div class="form-body {{flash.type}}">
+    {{#each flash.messages}}
+    <ul>
+    {{#each this}}
+   <li>{{this}}</li>
+    {{/each}}
+    </ul>
+    {{/each}}
+    </div>
+    <div class="grid-1 ">
+        <div class="form-body">
+            <form class="form-horizontal" method="post" enctype="multipart/form-data">
+                
+                 <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Mã</label>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control1" id="ma" placeholder="Nhập vào mã người dùng!" data-required-msg="Phải là số!" name="ma" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Tên đăng nhập</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control1" id="ten" placeholder="Nhập vào tên đăng nhập!" name="ten" data-required-msg="Tên đăng nhập phải nhiều hơn 8 kí tự!" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Mật khẩu</label>
+                    <div class="col-sm-8">
+                        <input type="password" class="form-control1" id="mk" placeholder="Nhập vào mật khẩu!" data-required-msg="Mật khẩu phải 8 kí tự trở lên!" name="mk" value="">
+                    </div>
+                </div>
+               <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Loại tài khoản</label>
+                    <div class="col-sm-8">
+                        <select name="loaitk" id="loaitk">
+                            <option value="2">Nhân viên</option>
+                            <option value="1">Quản lí</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Trạng thái</label>
+                    <div class="col-sm-8">
+                       
+                        <input type="radio" name="trangThai" value="1">Block
+                        <input type="radio" name="trangThai" value="2">Unblock
+                    </div>
+                </div>
+                
+                <input name="_csrf" type="hidden" value="{{csrfToken}}">
+                <div class="row">
+                 <div class="text-center">
+                <button class="btn btn-info btn-lg" onsubmit="return validateForm()"><span class="glyphicon glyphicon-pencil"></span>Thêm
+            </button>
+                <a href="/admin/list_account"class="alert alert-warming">Hủy</a>
+                </div>
+            </div>
+            </form>
+            
+        </div>
+
+    </div>
+</div>
+<script language="javascript" type = "text/javascript">
+    function validateForm() {
+        // Bước 1: Lấy giá trị của username và password
+        //var userName = document.getElementById('name').value;
+       // var ma = document.form.maSanPham.value;
+        //var gia = document.form.gia.value;
+        //var des = document.form.des.value;
+        //var maloai = document.form.maLoai.value;
+    
+        var ten = document.getElementById('ten').value;
+        var ma = document.getElementById('ma').value;
+        var mk = document.getElementById('mk').value;
+        var loaitk = document.getElementById('loaiTK').value;
+        var trangThai = document.getElementById('trangThai').value;
+
+        alert(usernames);
+
+        // Bước 2: Kiểm tra dữ liệu hợp lệ hay k?
+        if ( == "") {
+            alert('Bạn chưa nhập tên sản phẩm');
+        } else if (ma == "") {
+            alert("ban chua nhap ma");
+        } else if (des == "") {
+            alert("ban chua nhap mo ta");
+        } else if (maloai == "") {
+            alert("ban chua nhap ma loai");
+        } else {
+            alert("Dữ liệu nhập hợp lệ");
+            return true;
+        }
+        return false;
+    }
+    </script>

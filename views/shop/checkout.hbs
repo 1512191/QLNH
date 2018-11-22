@@ -1,0 +1,58 @@
+
+<br/>
+<div class="container">
+            <div class="row cart-body">
+                <form class="form-horizontal" method="POST" action="/checkout">                
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-0 col-sm-pull-6">
+                    <!--SHIPPING METHOD-->
+                    <div class="panel panel-info">
+                        <div class="panel-heading"> <strong>Tổng tiền:</strong>  {{total}} đ</div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <h4>Thông tin giao hàng</h4>
+                                </div>
+                            </div>
+                          
+                            <div class="form-group">
+                                <div class="col-md-6 col-xs-12">
+                                    <strong>First Name:</strong>
+                                    <input type="text" name="first_name" class="form-control" value="" />
+                                </div>
+                                <div class="span1"></div>
+                                <div class="col-md-6 col-xs-12">
+                                    <strong>Last Name:</strong>
+                                    <input type="text" name="last_name" class="form-control" value="" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12"><strong>Address:</strong></div>
+                                <div class="col-md-12">
+                                    <input type="text" name="address" class="form-control" value="" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12"><strong>Phone Number:</strong></div>
+                                <div class="col-md-12"><input type="text" name="phone_number" class="form-control" value="" /></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12"><strong>Email Address:</strong></div>
+                                <div class="col-md-12"><input type="text" name="email_address" class="form-control" value="" /></div>
+                            </div>                           
+                             <div class="form-group">
+                                <div class="col-md-12"><strong>Ghi chú</strong></div>
+                                <div class="col-md-12"><input type="text" name="note" class="form-control" value="" /></div>
+                            </div>   
+                        </div>
+                    </div>
+                    <!--SHIPPING METHOD END-->
+                    
+                </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input name="_csrf" type="hidden" value="{{csrfToken}}">
+                         <button type="submit" class="btn btn-primary btn-submit-fix">Thanh toán đơn hàng</button>
+                    </div>
+                </form>
+            </div>
+       
+    </div>
