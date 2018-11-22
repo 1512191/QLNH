@@ -1,5 +1,2 @@
-## WEBSITE HÀNG HÀNG
+## WEBSITE NHÀ HÀNG
 
-
-### training git
-### CREATED BY NGOC
